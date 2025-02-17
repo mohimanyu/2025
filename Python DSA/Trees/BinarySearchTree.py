@@ -18,19 +18,19 @@ class BinarySearchTree:
             if new_node.value == temp.value:
                 return False
             if new_node.value < temp.value:
-                if temp.left is None:
+                if not temp.left:
                     temp.left = new_node
                     return True
                 temp = temp.left
             else:
-                if temp.right is None:
-                        temp.right = new_node
-                        return True
+                if not temp.right:
+                    temp.right = new_node
+                    return True
                 temp = temp.right
     
     def contains(self, value):
         temp = self.root
-        while temp is not None:
+        while temp:
             if value < temp.value:
                 temp = temp.left
             elif value > temp.value:

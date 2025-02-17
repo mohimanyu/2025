@@ -21,21 +21,18 @@ class LinkedList:
             self.tail = new_node
         return True
   
-  
         
 def find_kth_from_end(my_linked_list, k):
     slow = my_linked_list.head
     fast = my_linked_list.head
     for _ in range(k-1):
-        if fast.next == None:
+        if not fast.next:
             return None
         fast = fast.next
-    while fast.next != None:
+    while fast.next:
         slow = slow.next
         fast = fast.next
     return slow
-
-
 
 
 my_linked_list = LinkedList(1)

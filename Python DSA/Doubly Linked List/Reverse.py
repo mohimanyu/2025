@@ -29,24 +29,16 @@ class DoublyLinkedList:
             self.tail = new_node
         self.length += 1
         return True
-        
 
     def reverse(self):
-        if self.length < 2:
-            return None
-        else:
-            temp = self.head
-            current = temp.next
-            while current is not None:
-                temp.next = temp.prev
-                temp.prev = current.prev
-                temp = current                
-                current = current.next
+        temp = None
+        current = self.head
+        while current:
+            temp = current.prev
+            current.prev = current.next
+            current.next = temp              
+            current = current.prev
                 
-            
-
-
-
 
 my_doubly_linked_list = DoublyLinkedList(1)
 my_doubly_linked_list.append(2)

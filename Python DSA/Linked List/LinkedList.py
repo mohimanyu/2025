@@ -14,13 +14,13 @@ class LinkedList:
     if self.length == 0:
       return None
     temp = self.head
-    while temp is not None:
+    while temp:
       print(temp.value)
       temp = temp.next
 
   def append_list(self, value):
     new_node = Node(value)
-    if self.head is None:
+    if not self.head:
       self.head = new_node
       self.tail = new_node
     else:

@@ -3,7 +3,7 @@ class Graph:
         self.adj_list = {}
 
     def print_graph(self):
-        for vertex in self.adj_list:
+        for vertex, edges in self.adj_list:
             print(vertex, ':', self.adj_list[vertex])
 
     def add_vertex(self, vertex):
@@ -52,7 +52,9 @@ my_graph.add_edge('A', 'D')
 my_graph.add_edge('B', 'D')
 my_graph.add_edge('C', 'D')
 
-# my_graph.remove_edge('A', 'D')
+my_graph.print_graph()
+
+my_graph.remove_edge('A', 'D')
 
 my_graph.remove_vertex('D')
 

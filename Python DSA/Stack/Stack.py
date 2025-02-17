@@ -11,7 +11,7 @@ class Stack:
 
   def print_stack(self):
     temp = self.top
-    while temp is not None:
+    while temp:
       print(temp.value)
       temp = temp.next
 
@@ -34,8 +34,8 @@ class Stack:
     return temp
 
 my_stack = Stack(4)
-# my_stack.push(2)
-# my_stack.push(4)
-# my_stack.print_stack()
-print(my_stack.pop().value)
+my_stack.push(2)
+my_stack.push(4)
 my_stack.print_stack()
+# print(my_stack.pop().value)
+# my_stack.print_stack()

@@ -21,7 +21,21 @@ def wrapLines(words, k):
 
 
 # Test cases
-words1 = ["The","day","began","as","still","as","the","night","abruptly","lighted","with","brilliant","flame"]
+words1 = [
+    "The",
+    "day",
+    "began",
+    "as",
+    "still",
+    "as",
+    "the",
+    "night",
+    "abruptly",
+    "lighted",
+    "with",
+    "brilliant",
+    "flame",
+]
 words2 = ["Hello"]
 words3 = ["Hello", "Hello"]
 words4 = ["Well", "Hello", "world"]

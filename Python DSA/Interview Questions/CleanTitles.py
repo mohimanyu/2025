@@ -1,9 +1,10 @@
 import re
 from collections import Counter
 
+
 def best_matching_title(clearTitles, rawTitle):
     # Tokenize words from rawTitle (convert to lowercase for case insensitivity)
-    raw_words = re.findall(r'\b\w+\b', rawTitle.lower())
+    raw_words = re.findall(r"\b\w+\b", rawTitle.lower())
     raw_counter = Counter(raw_words)
 
     max_overlap = 0
@@ -11,7 +12,7 @@ def best_matching_title(clearTitles, rawTitle):
 
     for title in clearTitles:
         # Tokenize words from cleanTitle
-        title_words = re.findall(r'\b\w+\b', title.lower())
+        title_words = re.findall(r"\b\w+\b", title.lower())
         title_counter = Counter(title_words)
 
         # Calculate overlap score
@@ -24,7 +25,8 @@ def best_matching_title(clearTitles, rawTitle):
 
     return best_title
 
-clearTitles = ["Software Engineer", 'Mechanical Engineer', "Data Scientist"]
+
+clearTitles = ["Software Engineer", "Mechanical Engineer", "Data Scientist"]
 rawTitle = "Require a software engineer, paying $10000"
 
 print(best_matching_title(clearTitles, rawTitle))

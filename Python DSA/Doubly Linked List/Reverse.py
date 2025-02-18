@@ -3,7 +3,7 @@ class Node:
         self.value = value
         self.next = None
         self.prev = None
-        
+
 
 class DoublyLinkedList:
     def __init__(self, value):
@@ -17,7 +17,7 @@ class DoublyLinkedList:
         while temp is not None:
             print(temp.value)
             temp = temp.next
-        
+
     def append(self, value):
         new_node = Node(value)
         if self.head is None:
@@ -36,9 +36,9 @@ class DoublyLinkedList:
         while current:
             temp = current.prev
             current.prev = current.next
-            current.next = temp              
+            current.next = temp
             current = current.prev
-                
+
 
 my_doubly_linked_list = DoublyLinkedList(1)
 my_doubly_linked_list.append(2)
@@ -47,16 +47,15 @@ my_doubly_linked_list.append(4)
 my_doubly_linked_list.append(5)
 
 
-print('DLL before reverse():')
+print("DLL before reverse():")
 my_doubly_linked_list.print_list()
 
 
 my_doubly_linked_list.reverse()
 
 
-print('\nDLL after reverse():')
+print("\nDLL after reverse():")
 my_doubly_linked_list.print_list()
-
 
 
 """
@@ -77,4 +76,3 @@ my_doubly_linked_list.print_list()
     1
 
 """
-

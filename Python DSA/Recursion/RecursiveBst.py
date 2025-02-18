@@ -4,11 +4,12 @@ class Node:
         self.left = None
         self.right = None
 
+
 class BinarySearchTree:
     def __init__(self):
         self.root = None
 
-    def  __r_insert(self, current_node, value):
+    def __r_insert(self, current_node, value):
         if current_node == None:
             return Node(value)
         if value < current_node.value:
@@ -16,12 +17,12 @@ class BinarySearchTree:
         if value > current_node.value:
             current_node.right = self.__r_insert(current_node.right, value)
         return current_node
-         
+
     def r_insert(self, value):
         if self.root == None:
             self.root = Node(value)
-        return self.__r_insert(self.root, value)   
-    
+        return self.__r_insert(self.root, value)
+
     def __r_contains(self, current_node, value):
         if current_node == None:
             return False
@@ -31,7 +32,7 @@ class BinarySearchTree:
             return self.__r_contains(current_node.left, value)
         if value > current_node.value:
             return self.__r_contains(current_node.right, value)
-    
+
     def r_contains(self, value):
         return self.__r_contains(self.root, value)
 
@@ -57,12 +58,15 @@ class BinarySearchTree:
             else:
                 sub_tree_min = self.min_value(current_node.right)
                 current_node.value = sub_tree_min
-                current_node.right = self.__delete_node(current_node.right, sub_tree_min)
+                current_node.right = self.__delete_node(
+                    current_node.right, sub_tree_min
+                )
         return current_node
 
     def delete_node(self, value):
         self.__delete_node(self.root, value)
-    
+
+
 # nums = [47, 21, 76, 18, 27, 52, 82]
 
 my_tree = BinarySearchTree()

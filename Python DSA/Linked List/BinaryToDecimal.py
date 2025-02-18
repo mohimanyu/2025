@@ -2,7 +2,8 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
-        
+
+
 class LinkedList:
     def __init__(self, value):
         new_node = Node(value)
@@ -19,7 +20,7 @@ class LinkedList:
                 current = current.next
             current.next = new_node
         self.length += 1
-    
+
     def print_list(self):
         if self.head is None:
             print("empty list")
@@ -29,15 +30,16 @@ class LinkedList:
             while temp is not None:
                 values.append(str(temp.value))
                 temp = temp.next
-            print(" -> ".join(values)) 
+            print(" -> ".join(values))
 
     def binary_to_decimal(self):
         temp = self.head
         total = 0
         for i in range(self.length):
-            total = total + pow(2, self.length-(i+1)) * temp.value
+            total = total + pow(2, self.length - (i + 1)) * temp.value
             temp = temp.next
         return total
+
 
 # Test case 1: Binary number 110 = Decimal number 6
 linked_list = LinkedList(1)
@@ -91,8 +93,8 @@ try:
     print("Test case 5 passed, returned: ", result)
 except AssertionError:
     print("Test case 5 failed, returned: ", result)
-    
- 
+
+
 """
     EXPECTED OUTPUT:
     ----------------
@@ -102,4 +104,3 @@ except AssertionError:
     Test case 4 passed, returned:  1
     Test case 5 passed, returned:  13
 """
-

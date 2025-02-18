@@ -2,7 +2,8 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
-        
+
+
 class LinkedList:
     def __init__(self, value):
         new_node = Node(value)
@@ -18,40 +19,40 @@ class LinkedList:
             while current_node.next is not None:
                 current_node = current_node.next
             current_node.next = new_node
-        self.length += 1 
-    
+        self.length += 1
+
     def print_list(self):
         temp = self.head
         while temp is not None:
             print(temp.value)
-            temp = temp.next    
-            
+            temp = temp.next
+
     def make_empty(self):
         self.head = None
         self.tail = None
         self.length = 0
-        
-#   +===================================================+
-#   |               WRITE YOUR CODE HERE                |
-#   | Description:                                      |
-#   | - This method partitions a linked list around a   |
-#   |   value `x`.                                      |
-#   | - It rearranges the nodes so that all nodes less  |
-#   |   than `x` come before all nodes greater or equal |
-#   |   to `x`.                                         |
-#   |                                                   |
-#   | Tips:                                             |
-#   | - We use two dummy nodes, `dummy1` and `dummy2`,  |
-#   |   to build two separate lists: one for elements   |
-#   |   smaller than `x` and one for elements greater   |
-#   |   or equal to `x`.                                |
-#   | - `prev1` and `prev2` help us keep track of the   |
-#   |   last nodes in these lists.                      |
-#   | - Finally, we merge these two lists by setting    |
-#   |   `prev1.next = dummy2.next`.                     |
-#   | - The head of the resulting list becomes          |
-#   |   `dummy1.next`.                                  |
-#   +===================================================+
+
+    #   +===================================================+
+    #   |               WRITE YOUR CODE HERE                |
+    #   | Description:                                      |
+    #   | - This method partitions a linked list around a   |
+    #   |   value `x`.                                      |
+    #   | - It rearranges the nodes so that all nodes less  |
+    #   |   than `x` come before all nodes greater or equal |
+    #   |   to `x`.                                         |
+    #   |                                                   |
+    #   | Tips:                                             |
+    #   | - We use two dummy nodes, `dummy1` and `dummy2`,  |
+    #   |   to build two separate lists: one for elements   |
+    #   |   smaller than `x` and one for elements greater   |
+    #   |   or equal to `x`.                                |
+    #   | - `prev1` and `prev2` help us keep track of the   |
+    #   |   last nodes in these lists.                      |
+    #   | - Finally, we merge these two lists by setting    |
+    #   |   `prev1.next = dummy2.next`.                     |
+    #   | - The head of the resulting list becomes          |
+    #   |   `dummy1.next`.                                  |
+    #   +===================================================+
 
     def partition_list(self, x):
         if not self.head:
@@ -74,8 +75,6 @@ class LinkedList:
         self.head = dummy1.next
 
 
-
-
 #  +=====================================================+
 #  |                                                     |
 #  |          THE TEST CODE BELOW WILL PRINT             |
@@ -95,12 +94,13 @@ def linkedlist_to_list(head):
         current = current.next
     return result
 
+
 # Function to test partition_list
 def test_partition_list():
     test_cases_passed = 0
-    
+
     print("-----------------------")
-    
+
     # Test 1: Normal Case
     print("Test 1: Normal Case")
     x = 3
@@ -118,9 +118,9 @@ def test_partition_list():
         test_cases_passed += 1
     else:
         print("FAIL")
-        
+
     print("-----------------------")
-    
+
     # Test 2: All Equal Values
     print("Test 2: All Equal Values")
     x = 3
@@ -136,9 +136,9 @@ def test_partition_list():
         test_cases_passed += 1
     else:
         print("FAIL")
-        
+
     print("-----------------------")
-    
+
     # Test 3: Single Element
     print("Test 3: Single Element")
     x = 3
@@ -152,9 +152,9 @@ def test_partition_list():
         test_cases_passed += 1
     else:
         print("FAIL")
-        
+
     print("-----------------------")
-    
+
     # Test 4: Already Sorted
     print("Test 4: Already Sorted")
     x = 2
@@ -170,9 +170,9 @@ def test_partition_list():
         test_cases_passed += 1
     else:
         print("FAIL")
-        
+
     print("-----------------------")
-    
+
     # Test 5: Reverse Sorted
     print("Test 5: Reverse Sorted")
     x = 2
@@ -188,9 +188,9 @@ def test_partition_list():
         test_cases_passed += 1
     else:
         print("FAIL")
-        
+
     print("-----------------------")
-    
+
     # Test 6: All Smaller Values
     print("Test 6: All Smaller Values")
     x = 2
@@ -206,9 +206,9 @@ def test_partition_list():
         test_cases_passed += 1
     else:
         print("FAIL")
-        
+
     print("-----------------------")
-    
+
     # Test 7: Single Element, Equal to Partition
     print("Test 7: Single Element, Equal to Partition")
     x = 3
@@ -222,13 +222,12 @@ def test_partition_list():
         test_cases_passed += 1
     else:
         print("FAIL")
-        
+
     print("-----------------------")
-    
+
     # Summary
     print(f"{test_cases_passed} out of 7 tests passed.")
 
 
 # Run the test function
 test_partition_list()
-      

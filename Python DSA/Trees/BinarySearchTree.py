@@ -4,6 +4,7 @@ class Node:
         self.left = None
         self.right = None
 
+
 class BinarySearchTree:
     def __init__(self):
         self.root = None
@@ -27,7 +28,7 @@ class BinarySearchTree:
                     temp.right = new_node
                     return True
                 temp = temp.right
-    
+
     def contains(self, value):
         temp = self.root
         while temp:
@@ -38,7 +39,7 @@ class BinarySearchTree:
             else:
                 return True
         return False
-    
+
     def BFS(self):
         current_node = self.root
         queue = []
@@ -52,7 +53,7 @@ class BinarySearchTree:
             if current_node.right:
                 queue.append(current_node.right)
         return results
-    
+
     def dfs_pre_order(self):
         results = []
 
@@ -63,10 +64,10 @@ class BinarySearchTree:
             if current_node.right:
                 traverse(current_node.right)
             return results
-        
+
         traverse(self.root)
         return results
-    
+
     def dfs_post_order(self):
         results = []
 
@@ -77,10 +78,10 @@ class BinarySearchTree:
                 traverse(current_node.right)
             results.append(current_node.value)
             return results
-        
+
         traverse(self.root)
         return results
-    
+
     def dfs_in_order(self):
         results = []
 
@@ -91,7 +92,7 @@ class BinarySearchTree:
             if current_node.right:
                 traverse(current_node.right)
             return results
-        
+
         traverse(self.root)
         return results
 

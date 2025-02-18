@@ -2,7 +2,8 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
-        
+
+
 class LinkedList:
     def __init__(self, value):
         new_node = Node(value)
@@ -20,13 +21,13 @@ class LinkedList:
             current.next = new_node
         self.length += 1
         return True
-    
+
     def print_list(self):
         temp = self.head
         while temp is not None:
             print(temp.value)
-            temp = temp.next    
-            
+            temp = temp.next
+
     def make_empty(self):
         self.head = None
         self.length = 0
@@ -42,7 +43,7 @@ class LinkedList:
             elif end_index == i:
                 break
             end = end.next
-        print(start.value, end.value)    
+        print(start.value, end.value)
 
 
 linked_list = LinkedList(1)

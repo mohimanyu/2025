@@ -2,7 +2,8 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
-        
+
+
 class LinkedList:
     def __init__(self, value):
         new_node = Node(value)
@@ -19,7 +20,7 @@ class LinkedList:
                 current = current.next
             current.next = new_node
         self.length += 1
-    
+
     def print_list(self):
         if self.head is None:
             print("empty list")
@@ -44,7 +45,6 @@ class LinkedList:
             else:
                 values.add(current.next.value)
                 current = current.next
-            
 
 
 def test_remove_duplicates(linked_list, expected_values):
@@ -66,6 +66,7 @@ def test_remove_duplicates(linked_list, expected_values):
         print("Test PASS\n")
     else:
         print("Test FAIL\n")
+
 
 # Test 1: List with no duplicates
 ll = LinkedList(1)
@@ -114,5 +115,5 @@ test_remove_duplicates(ll, [1, 2, 3])
 # Test 7: Empty list
 ll = LinkedList(None)
 ll.head = None  # Directly setting the head to None
-ll.length = 0   # Adjusting the length to reflect an empty list
+ll.length = 0  # Adjusting the length to reflect an empty list
 test_remove_duplicates(ll, [])

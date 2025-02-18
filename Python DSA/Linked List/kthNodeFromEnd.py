@@ -2,7 +2,7 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
-        
+
 
 class LinkedList:
     def __init__(self, value):
@@ -10,7 +10,6 @@ class LinkedList:
         self.head = new_node
         self.tail = new_node
 
-        
     def append(self, value):
         new_node = Node(value)
         if self.head == None:
@@ -20,12 +19,12 @@ class LinkedList:
             self.tail.next = new_node
             self.tail = new_node
         return True
-  
-        
+
+
 def find_kth_from_end(my_linked_list, k):
     slow = my_linked_list.head
     fast = my_linked_list.head
-    for _ in range(k-1):
+    for _ in range(k - 1):
         if not fast.next:
             return None
         fast = fast.next
@@ -48,11 +47,9 @@ result = find_kth_from_end(my_linked_list, k)
 print(result.value)  # Output: 4
 
 
-
 """
     EXPECTED OUTPUT:
     ----------------
     4
     
 """
-

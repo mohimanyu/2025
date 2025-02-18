@@ -2,7 +2,7 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
-        
+
 
 class LinkedList:
     def __init__(self, value):
@@ -16,7 +16,7 @@ class LinkedList:
         while temp is not None:
             print(temp.value)
             temp = temp.next
-        
+
     def append(self, value):
         new_node = Node(value)
         if self.head is None:
@@ -30,8 +30,8 @@ class LinkedList:
     def bubble_sort(self):
         if not self.head or not self.head.next:
             return
-        
-        for i in range(self.length-1, 0, -1):
+
+        for i in range(self.length - 1, 0, -1):
             current = self.head
             swapped = False
 
@@ -44,11 +44,11 @@ class LinkedList:
 
             if not swapped:
                 break
-    
+
     def selection_sort(self):
         if not self.head or not self.head.next:
             return
-        
+
         temp = self.head
         while temp and temp.next:
             min_node = temp
@@ -65,19 +65,19 @@ class LinkedList:
         if not sorted_head or new_node.value < sorted_head.value:
             new_node.next = sorted_head
             return sorted_head
-        
+
         current = sorted_head
         while current.next and current.next.value < new_node.value:
             current = current.next
 
         new_node.next = current.next
         current.next = new_node
-        return sorted_head        
+        return sorted_head
 
     def insertion_sort(self):
         if not self.head or not self.head.next:
             return
-        
+
         sorted_list = None
         current = self.head
 
@@ -85,8 +85,8 @@ class LinkedList:
             next_node = current.next
             sorted_list = self.sorted_insert(sorted_list, current)
             current = next_node
-        
-        self.head = sorted_list    
+
+        self.head = sorted_list
 
 
 my_linked_list = LinkedList(4)
@@ -103,7 +103,6 @@ my_linked_list.print_list()
 
 # print("\nBubble Sorted Linked List:")
 # my_linked_list.print_list()
-
 
 
 """
@@ -133,7 +132,6 @@ my_linked_list.print_list()
 # my_linked_list.print_list()
 
 
-
 """
     EXPECTED OUTPUT:
     ----------------
@@ -161,7 +159,6 @@ print("\Insertion Sorted Linked List:")
 my_linked_list.print_list()
 
 
-
 """
     EXPECTED OUTPUT:
     ----------------
@@ -182,6 +179,3 @@ my_linked_list.print_list()
     6
 
 """
-
-
-
